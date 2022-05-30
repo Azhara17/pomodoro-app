@@ -1,0 +1,29 @@
+button {
+  cursor: pointer;
+}
+
+.timer__btn {
+  margin-top: 60px;
+  padding: 22px 47px;
+  font-size: 25px;
+  border-radius: 50px;
+  background: transparent;
+  border: 1px solid #fafafa;
+}
+
+.settings__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: 0;
+  border: 0;
+}
+
+.settings-box__btns {
+  margin-top: -60px;
+  text-align: right;
+}
+
+.timer__btn_close {
+  margin-right: 20px;
+}

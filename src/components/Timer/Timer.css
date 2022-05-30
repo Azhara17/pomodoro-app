@@ -1,0 +1,15 @@
+.CircularProgressbar {
+  width: 300px !important;
+  display: flex;
+  margin: 12% auto 0;
+  background-color: transparent;
+}
+
+.CircularProgressbar-trail,
+.CircularProgressbar-path {
+  stroke-width: 2;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #fafafa !important;
+}

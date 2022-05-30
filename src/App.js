@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Timer from "./components/Timer/Timer";
+import SettingsWindow from "./components/SettingsWindow/Settings";
+import SettingsContext from "./components/SettingsWindow/SettingsContext";
 
 function App() {
+  const [showSettings, setShowSettings] = useState(false);
+  const [pomodoroMinutes, setPomodoroMinutes] = useState(25);
+  const [shortBreakMinutes, setShortBreakMinutes] = useState(5);
+  const [longBreakMinutes, setLongBreakMinutes] = useState(15);
+  const [fullPomodoroMinutes, setFullPomodoroMinutes] = useState(4);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SettingsContext.Provider
+        value={{
+          showSettings,
+          setShowSettings,
+          pomodoroMinutes,
+          shortBreakMinutes,
+          longBreakMinutes,
+          fullPomodoroMinutes,
+          setPomodoroMinutes,
+          setShortBreakMinutes,
+          setLongBreakMinutes,
+          setFullPomodoroMinutes,
+        }}
+      >
+        {showSettings ? <SettingsWindow /> : <Timer />}
+      </SettingsContext.Provider>
     </div>
   );
 }
